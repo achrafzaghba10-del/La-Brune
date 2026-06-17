@@ -1,0 +1,468 @@
+// ================================
+// SMOOTH SCROLLING & NAVBAR
+// ================================
+
+const navbar = document.querySelector(".navbar");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll(".nav-link");
+
+// Navbar background on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// Hamburger menu toggle
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Close mobile menu on link click
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
+
+// ================================
+// MENU TABS FUNCTIONALITY
+// ================================
+
+const menuTabs = document.querySelectorAll(".menu-tab");
+const menuContents = document.querySelectorAll(".menu-tab-content");
+
+menuTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Remove active class from all tabs and contents
+    menuTabs.forEach((t) => t.classList.remove("active"));
+    menuContents.forEach((content) => content.classList.remove("active"));
+
+    // Add active class to clicked tab
+    tab.classList.add("active");
+
+    // Show corresponding content
+    const tabId = tab.getAttribute("data-tab");
+    const content = document.getElementById(tabId);
+    if (content) {
+      content.classList.add("active");
+    }
+  });
+});
+
+// ================================
+// ANIMATION ON SCROLL
+// ================================
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, observerOptions);
+
+// Observe all elements with data-aos attribute
+document.querySelectorAll("[data-aos]").forEach((el) => {
+  observer.observe(el);
+});
+
+// ================================
+// HERO SECTION ANIMATIONS
+// ================================
+
+// Animate hero content on load
+window.addEventListener("load", () => {
+  const heroTitle = document.querySelector(".hero-title");
+  const heroSubtitle = document.querySelector(".hero-subtitle");
+  const heroButtons = document.querySelector(".hero-buttons");
+
+  if (heroTitle) {
+    heroTitle.style.animation = "fadeInUp 1s ease forwards";
+  }
+  if (heroSubtitle) {
+    heroSubtitle.style.animation = "fadeInUp 1s ease 0.2s forwards";
+  }
+  if (heroButtons) {
+    heroButtons.style.animation = "fadeInUp 1s ease 0.4s forwards";
+  }
+});
+
+// ================================
+// MENU ITEM INTERACTION
+// ================================
+
+const menuItems = document.querySelectorAll(".menu-item");
+
+menuItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    item.style.transform = "translateY(-5px)";
+  });
+
+  item.addEventListener("mouseleave", () => {
+    item.style.transform = "translateY(0)";
+  });
+});
+
+// ================================
+// GALLERY HOVER EFFECTS
+// ================================
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+galleryItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    item.style.transform = "scale(1.05)";
+  });
+
+  item.addEventListener("mouseleave", () => {
+    item.style.transform = "scale(1)";
+  });
+});
+
+// ================================
+// SMOOTH SCROLL TO SECTIONS
+// ================================
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      const offsetTop = targetSection.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+// ================================
+// PARALLAX EFFECT (Hero Background)
+// ================================
+
+const heroOverlay = document.querySelector(".hero-overlay");
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  if (heroOverlay) {
+    heroOverlay.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+  }
+});
+
+// ================================
+// TESTIMONIALS CAROUSEL
+// ================================
+
+const testimonialCards = document.querySelectorAll(
+  ".testimonial-card:not(.featured)"
+);
+let currentTestimonial = 0;
+
+function rotateTestimonials() {
+  testimonialCards.forEach((card) => {
+    card.style.opacity = "0.5";
+    card.style.transform = "scale(0.95)";
+  });
+
+  if (testimonialCards[currentTestimonial]) {
+    testimonialCards[currentTestimonial].style.opacity = "1";
+    testimonialCards[currentTestimonial].style.transform = "scale(1)";
+  }
+
+  currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+}
+
+// Initialize testimonials
+if (testimonialCards.length > 0) {
+  rotateTestimonials();
+  setInterval(rotateTestimonials, 5000);
+}
+
+// ================================
+// INTERACTIVE ELEMENTS
+// ================================
+
+// Button ripple effect
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    const ripples = document.createElement("span");
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripples.style.width = ripples.style.height = size + "px";
+    ripples.style.left = x + "px";
+    ripples.style.top = y + "px";
+    ripples.classList.add("ripple");
+
+    this.appendChild(ripples);
+
+    setTimeout(() => ripples.remove(), 600);
+  });
+});
+
+// ================================
+// CONTACT FORM SUBMISSION
+// ================================
+
+// Scroll animation for info cards
+const infoCards = document.querySelectorAll(".info-card");
+
+infoCards.forEach((card, index) => {
+  card.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+  card.style.opacity = "0";
+});
+
+// ================================
+// PERFORMANCE OPTIMIZATION
+// ================================
+
+// Lazy loading for images (if added)
+if ("IntersectionObserver" in window) {
+  const images = document.querySelectorAll("img[data-src]");
+
+  images.forEach((img) => {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const src = entry.target.dataset.src;
+          entry.target.src = src;
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    imageObserver.observe(img);
+  });
+}
+
+// ================================
+// ACTIVE NAV LINK HIGHLIGHT
+// ================================
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").slice(1) === current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ================================
+// ADD ACTIVE STYLING TO NAV LINKS
+// ================================
+
+const style = document.createElement("style");
+style.textContent = `
+    .nav-link.active {
+        color: var(--accent-gold);
+    }
+
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+
+document.head.appendChild(style);
+
+// ================================
+// MOBILE OPTIMIZATION
+// ================================
+
+// Prevent layout shift on scroll
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+if (scrollbarWidth > 0) {
+  document.body.style.paddingRight = scrollbarWidth + "px";
+}
+
+// ================================
+// WHATSAPP INTEGRATION
+// ================================
+
+function openWhatsApp() {
+  const phoneNumber = "212627495400";
+  const message =
+    "Hello LA BRUNE! I would like to know more about your menu and services.";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+  window.open(whatsappUrl, "_blank");
+}
+
+// ================================
+// SECTION REVEAL ANIMATION
+// ================================
+
+const sections = document.querySelectorAll("section");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+sections.forEach((section) => {
+  section.style.opacity = "0";
+  section.style.transform = "translateY(30px)";
+  section.style.transition = "all 0.8s ease";
+  sectionObserver.observe(section);
+});
+
+// ================================
+// KEYBOARD NAVIGATION
+// ================================
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+});
+
+// ================================
+// ACCESSIBILITY IMPROVEMENTS
+// ================================
+
+// Add focus visible styles
+const style2 = document.createElement("style");
+style2.textContent = `
+    .btn:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid var(--accent-gold);
+        outline-offset: 2px;
+    }
+`;
+document.head.appendChild(style2);
+
+// ================================
+// SOCIAL MEDIA LINKS
+// ================================
+
+function openSocialMedia(platform) {
+  const links = {
+    instagram: "https://instagram.com/la.brune.officiel/",
+    facebook: "https://facebook.com/styleauthentique/",
+    whatsapp: "https://wa.me/212627495400"
+  };
+
+  if (links[platform]) {
+    window.open(links[platform], "_blank");
+  }
+}
+
+// ================================
+// PERFORMANCE MONITORING
+// ================================
+
+window.addEventListener("load", () => {
+  if (window.performance && window.performance.timing) {
+    const perfData = window.performance.timing;
+    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+    console.log("Page load time: " + pageLoadTime + "ms");
+  }
+});
+
+// ================================
+// DOCUMENT READY INITIALIZATION
+// ================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🎉 LA BRUNE Café Website Loaded Successfully! ✨");
+
+  // Add any additional initialization here
+  initializeAnimations();
+
+  // Initialize the first menu tab
+  const firstTab = document.querySelector(".menu-tab");
+  if (firstTab) {
+    firstTab.classList.add("active");
+  }
+  const firstContent = document.querySelector(".menu-tab-content");
+  if (firstContent) {
+    firstContent.classList.add("active");
+  }
+});
+
+function initializeAnimations() {
+  // Initialize all animations
+  const animatedElements = document.querySelectorAll("[data-aos]");
+  animatedElements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+  });
+}
+
+// ================================
+// SMOOTH SCROLL ANCHOR LINKS
+// ================================
+
+// Get all anchor links
+const anchorLinks = document.querySelectorAll('a[href*="#"]');
+
+anchorLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (href !== "#" && document.querySelector(href)) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
