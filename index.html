@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA BRUNE - Luxury Café in Casablanca</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">LA BRUNE</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title" data-aos="fade-up">LA BRUNE</h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Luxury Café Experience in Casablanca</p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+        <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">View Menu</button>
+        <button class="btn btn-secondary" onclick="window.open('https://wa.me/212627495400', '_blank')">Order Now</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <h2 class="section-title">About LA BRUNE</h2>
+          <p class="about-description">
+            LA BRUNE offers handcrafted crêpes, gaufres, pancakes, premium milkshakes, artisan desserts, and a modern café atmosphere in the heart of Casablanca. We believe in creating not just food, but unforgettable experiences. Every item is carefully crafted with premium ingredients and artistic passion.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-leaf"></i>
+              <h3>Premium Ingredients</h3>
+              <p>Only the finest quality ingredients</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-heart"></i>
+              <h3>Handcrafted</h3>
+              <p>Lovingly prepared with care</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-sparkles"></i>
+              <h3>Luxury Experience</h3>
+              <p>Premium atmosphere and service</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image" data-aos="fade-left">
+          <div class="image-placeholder">
+            <i class="fas fa-coffee"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Complete Menu</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Indulge in our signature creations</p>
+
+      <!-- MENU TABS -->
+      <div class="menu-tabs" data-aos="fade-up" data-aos-delay="200">
+        <button class="menu-tab active" data-tab="crepes">Crêpes & Gaufres</button>
+        <button class="menu-tab" data-tab="specials">Specials</button>
+        <button class="menu-tab" data-tab="desserts">Desserts</button>
+        <button class="menu-tab" data-tab="hot-drinks">Hot Drinks</button>
+        <button class="menu-tab" data-tab="cold-drinks">Cold Drinks</button>
+      </div>
+
+      <!-- CRÊPES & GAUFRES -->
+      <div id="crepes" class="menu-tab-content active">
+        <div class="menu-grid">
+          <div class="menu-item" data-aos="fade-up">
+            <div class="item-header">
+              <h3>Nutella</h3>
+              <span class="price">15 DH</span>
+            </div>
+            <p class="item-desc">Classic crêpe with premium Nutella</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="item-header">
+              <h3>Double Nutella</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Generously filled with Nutella</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="item-header">
+              <h3>Nutella Banane</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Nutella with fresh banana slices</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="item-header">
+              <h3>Nutella Fruit Rouge</h3>
+              <span class="price">25 DH</span>
+            </div>
+            <p class="item-desc">Nutella with fresh red berries</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="item-header">
+              <h3>Nutella Fruits Secs</h3>
+              <span class="price">25 DH</span>
+            </div>
+            <p class="item-desc">Nutella with dry fruits & nuts</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="item-header">
+              <h3>Nutella Oreo, Milka</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Nutella with Oreo or Milka chocolate</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="item-header">
+              <h3>Nutella Lotus</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Nutella with crushed Lotus biscuits</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="350">
+            <div class="item-header">
+              <h3>Nutella Brownie</h3>
+              <span class="price">25 DH</span>
+            </div>
+            <p class="item-desc">Nutella with fudgy brownie pieces</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="item-header">
+              <h3>Nutella Brownie Lotus</h3>
+              <span class="price">30 DH</span>
+            </div>
+            <p class="item-desc">Nutella with brownie & Lotus crumble</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="450">
+            <div class="item-header">
+              <h3>Nutella Candy Mix</h3>
+              <span class="price">25 DH</span>
+            </div>
+            <p class="item-desc">Nutella with Snickers, Kinder Bueno, Mars, Milka</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="item-header">
+              <h3>Nutella Chocolate Bar</h3>
+              <span class="price">25 DH</span>
+            </div>
+            <p class="item-desc">Nutella with KitKat, Twix, or Oreo</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="550">
+            <div class="item-header">
+              <h3>Nutella Konafa Pistache</h3>
+              <span class="price">35 DH</span>
+            </div>
+            <p class="item-desc">Nutella with pistachio konafa & ice cream</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="item-header">
+              <h3>Nutella Konafa Pistache Lotus</h3>
+              <span class="price">40 DH</span>
+            </div>
+            <p class="item-desc">Nutella with konafa, Lotus & ice cream</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECIALS -->
+      <div id="specials" class="menu-tab-content">
+        <div class="menu-grid">
+          <div class="menu-item premium" data-aos="fade-up">
+            <div class="premium-badge">SPECIAL</div>
+            <div class="item-header">
+              <h3>Crêpes 4 Saisons</h3>
+              <span class="price">35 DH</span>
+            </div>
+            <p class="item-desc">Nutella Banane, Nutella Oreo, Lotus, Crème Lotus, Konafa Pistache, Boule de Glace</p>
+          </div>
+
+          <div class="menu-item premium" data-aos="fade-up" data-aos-delay="100">
+            <div class="premium-badge">SIGNATURE</div>
+            <div class="item-header">
+              <h3>Crêpes La Brune</h3>
+              <span class="price">35 DH</span>
+            </div>
+            <p class="item-desc">Nutella, KitKat, Oreo, Milka, Brownie, Fruit Sec, Crème Lotus, Crème Kinder, Boule de Glace</p>
+          </div>
+
+          <div class="menu-item premium" data-aos="fade-up" data-aos-delay="200">
+            <div class="premium-badge">LUXURY</div>
+            <div class="item-header">
+              <h3>Crêpes Royal</h3>
+              <span class="price">45 DH</span>
+            </div>
+            <p class="item-desc">Nutella, KitKat, Snickers, Kinder Bueno, Twix, Oreo, Milka, Brownie, Fruit Sec, Crème Lotus/Ferrero, Crème Kinder, Boule de Glace</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="item-header">
+              <h3>Crêpes Salé</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Fromage, Charcuterie, Mozzarella</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div id="desserts" class="menu-tab-content">
+        <div class="menu-grid">
+          <div class="menu-item" data-aos="fade-up">
+            <div class="item-header">
+              <h3>Cookies</h3>
+              <span class="price">5 DH</span>
+            </div>
+            <p class="item-desc">Fresh baked cookies</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="item-header">
+              <h3>Brownies</h3>
+              <span class="price">7 DH</span>
+            </div>
+            <p class="item-desc">Fudgy chocolate brownies</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="item-header">
+              <h3>Fondant Chocolat</h3>
+              <span class="price">20 DH</span>
+            </div>
+            <p class="item-desc">Chocolate lava cake with ice cream</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="item-header">
+              <h3>Tiramisu Oreo</h3>
+              <span class="price">12 DH</span>
+            </div>
+            <p class="item-desc">Classic Italian with Oreo</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="item-header">
+              <h3>Tiramisu Lotus</h3>
+              <span class="price">12 DH</span>
+            </div>
+            <p class="item-desc">Classic Italian with Lotus</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="item-header">
+              <h3>Tiramisu Nutella</h3>
+              <span class="price">12 DH</span>
+            </div>
+            <p class="item-desc">Classic Italian with Nutella</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="item-header">
+              <h3>Tiramisu Brownies</h3>
+              <span class="price">12 DH</span>
+            </div>
+            <p class="item-desc">Classic Italian with brownie pieces</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="350">
+            <div class="item-header">
+              <h3>Tiramisu Kinder Bueno</h3>
+              <span class="price">12 DH</span>
+            </div>
+            <p class="item-desc">Classic Italian with Kinder Bueno</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOT DRINKS -->
+      <div id="hot-drinks" class="menu-tab-content">
+        <div class="menu-grid">
+          <!-- Espresso & Coffee -->
+          <div class="menu-category-title">Espresso & Coffee</div>
+
+          <div class="menu-item" data-aos="fade-up">
+            <div class="item-header">
+              <h3>Expresso</h3>
+              <span class="price">6 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="item-header">
+              <h3>Double Expresso</h3>
+              <span class="price">11 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="item-header">
+              <h3>Expresso Afogato</h3>
+              <span class="price">11 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="item-header">
+              <h3>Expresso Americano</h3>
+              <span class="price">7 DH</span>
+            </div>
+          </div>
+
+          <!-- Lattes & Cappuccino -->
+          <div class="menu-category-title">Lattes & Cappuccino</div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="item-header">
+              <h3>Latte</h3>
+              <span class="price">7 DH</span>
+            </div>
+            <p class="item-desc">Café au Lait</p>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="item-header">
+              <h3>Cappuccino</h3>
+              <span class="price">8 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="item-header">
+              <h3>Latte Macchiato Caramel</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="350">
+            <div class="item-header">
+              <h3>Latte Macchiato Chocolat</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="item-header">
+              <h3>Latte Macchiato Vanille</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="450">
+            <div class="item-header">
+              <h3>Latte Macchiato Nutella</h3>
+              <span class="price">16 DH</span>
+            </div>
+          </div>
+
+          <!-- Tea & Hot Chocolate -->
+          <div class="menu-category-title">Tea & Hot Chocolate</div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="item-header">
+              <h3>Thé à la Menthe</h3>
+              <span class="price">7 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="550">
+            <div class="item-header">
+              <h3>Chocolat Chaud</h3>
+              <span class="price">7 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="item-header">
+              <h3>Chocolat Fondu</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLD DRINKS -->
+      <div id="cold-drinks" class="menu-tab-content">
+        <div class="menu-grid">
+          <!-- Frappuccino -->
+          <div class="menu-category-title">Frappuccino</div>
+
+          <div class="menu-item" data-aos="fade-up">
+            <div class="item-header">
+              <h3>Frappuccino Caramel</h3>
+              <span class="price">17 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="50">
+            <div class="item-header">
+              <h3>Frappuccino Chocolat</h3>
+              <span class="price">17 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="item-header">
+              <h3>Frappuccino Vanille</h3>
+              <span class="price">23 DH</span>
+            </div>
+          </div>
+
+          <!-- Iced Coffee -->
+          <div class="menu-category-title">Iced Coffee</div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="150">
+            <div class="item-header">
+              <h3>Iced Coffee Caramel</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="item-header">
+              <h3>Iced Coffee Chocolat</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="250">
+            <div class="item-header">
+              <h3>Iced Coffee Vanille</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="item-header">
+              <h3>Iced Coffee Nutella</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <!-- Mojito -->
+          <div class="menu-category-title">Mojito</div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="350">
+            <div class="item-header">
+              <h3>Mojito Classique</h3>
+              <span class="price">13 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="item-header">
+              <h3>Mojito Framboise Bleu</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="450">
+            <div class="item-header">
+              <h3>Mojito Framboise Rouge</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="item-header">
+              <h3>Mojito Ananas</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="550">
+            <div class="item-header">
+              <h3>Mojito Mangue</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="item-header">
+              <h3>Mojito Sweet and Sour</h3>
+              <span class="price">14 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="650">
+            <div class="item-header">
+              <h3>Pina Colada</h3>
+              <span class="price">16 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="700">
+            <div class="item-header">
+              <h3>Mojito Tropical</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <!-- Milk Shake -->
+          <div class="menu-category-title">Milk Shake</div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="750">
+            <div class="item-header">
+              <h3>Milk Shake Vanille</h3>
+              <span class="price">17 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="800">
+            <div class="item-header">
+              <h3>Milk Shake Chocolat</h3>
+              <span class="price">17 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="850">
+            <div class="item-header">
+              <h3>Milk Shake Fraise</h3>
+              <span class="price">17 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="900">
+            <div class="item-header">
+              <h3>Milk Shake Cookies</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="950">
+            <div class="item-header">
+              <h3>Milk Shake Oreo</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="1000">
+            <div class="item-header">
+              <h3>Milk Shake KitKat</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="1050">
+            <div class="item-header">
+              <h3>Milk Shake Brownies</h3>
+              <span class="price">20 DH</span>
+            </div>
+          </div>
+
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="1100">
+            <div class="item-header">
+              <h3>Milk Shake Pistacho</h3>
+              <span class="price">23 DH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Customer Love</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">What our guests are saying</p>
+
+      <div class="reviews-content">
+        <div class="reviews-stats" data-aos="fade-right">
+          <div class="rating-circle">
+            <span class="rating-number">4.9</span>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="review-count">130+ Reviews</p>
+          </div>
+        </div>
+
+        <div class="reviews-testimonials" data-aos="fade-left">
+          <div class="testimonial-card featured">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              محل مميز مشروع ممتاز اراهن انه سيكون له مستقبل كبير كعلامة تجارية مميزة في المغرب
+            </p>
+            <p class="testimonial-author">Mohammed Hassan</p>
+          </div>
+
+          <div class="testimonials-carousel">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">The atmosphere is incredible and the crêpes are divine!</p>
+              <p class="testimonial-author">Fatima El Ayouni</p>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-text">A luxury experience at its finest. Must visit in Casablanca!</p>
+              <p class="testimonial-author">Ahmed Belkoura</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Visual journey through LA BRUNE</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-aos="fade-up">
+          <div class="gallery-placeholder">
+            <i class="fas fa-pastafarianism"></i>
+            <p>Artisan Crêpes</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="gallery-placeholder">
+            <i class="fas fa-glass-cheers"></i>
+            <p>Premium Milkshakes</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="gallery-placeholder">
+            <i class="fas fa-couch"></i>
+            <p>Cozy Atmosphere</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="gallery-placeholder">
+            <i class="fas fa-camera"></i>
+            <p>Instagram Moments</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="gallery-placeholder">
+            <i class="fas fa-cookie-bite"></i>
+            <p>Signature Desserts</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="gallery-placeholder">
+            <i class="fas fa-lightbulb"></i>
+            <p>Elegant Lighting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Visit Us</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Find us in the heart of Casablanca</p>
+
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Casablanca, Morocco</p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p><a href="tel:+212627495400">+212 627 49 54 00</a></p>
+          </div>
+
+          <div class="info-card">
+            <i class="fas fa-clock"></i>
+            <h3>Opening Hours</h3>
+            <p>Open until 23:30</p>
+            <p class="hours-detail">Mon - Sun: 10:00 - 23:30</p>
+          </div>
+
+          <div class="social-buttons">
+            <a href="https://wa.me/212627495400" class="social-btn whatsapp" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/la.brune.officiel/" class="social-btn instagram" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/styleauthentique/" class="social-btn facebook" title="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-map" data-aos="fade-left">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5868905968254!2d-7.589326!3d33.573109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d2d8e8e8e8e8d%3A0x8e8e8e8e8e8e8e8e!2sCasablanca%2C%20Morocco!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="400" style="border:none; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>LA BRUNE</h3>
+          <p>Premium luxury café in the heart of Casablanca, Morocco</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/la.brune.officiel/" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/styleauthentique/" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/212627495400" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LA BRUNE - Luxury Café Casablanca. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
